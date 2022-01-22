@@ -1,0 +1,55 @@
+<nav class="navbar navbar-light bg-light">
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </nav>
+  
+<div class="container" style="margin-top: 70px;">
+    <div class="row">
+        <div class="col-sm-12">
+            <div *ngFor = "let car of car_list | async ">
+                <div class="card text-white bg-secondary mb-3"
+                style = "width: 50rem; margin: auto; cursor: pointer"
+                [routerLink] = "['/cars', car._id]">
+                <div class="card-header">
+                    {{ car.YEAR_ }}
+                    {{ car.BRAND }}
+                    {{ car.MODEL }}
+                </div>
+                <div class="card-body">
+                    {{ car.FUEL }}
+                </div>
+                <div class="card-body">
+                    {{ car.SHIFTTYPE }}
+                </div>
+                <div class="card-body">
+                    {{ car.MOTORVOLUME }}
+                </div>
+                <div class="card-body">
+                    {{ car.CASETYPE }}
+                </div>
+                <div class="card-body">
+                    {{ car.VARIANT }}
+                </div>
+                <div class="card-footer">
+                    
+                </div>
+            </div>
+        </div>
+    </div> 
+</div> 
+
+<div class = "row">
+    <div class = "col-sm-6">
+        <button class = "btn btn-secondary" (click) = "previousPage()">
+                Previous Page
+        </button>
+    </div>
+    <div class = "col-sm-6 text-end">
+        <button class = "btn btn-secondary" (click) = "nextPage()">
+            Next Page
+        </button>
+    </div>
+</div>
+</div> 
